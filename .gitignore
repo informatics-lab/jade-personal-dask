@@ -4,3 +4,4 @@ terraform.*
 *.terraform*
 *.idea*
 *.pyc
+*.DS_Store
