@@ -1,0 +1,6 @@
+aws
+terraform.*
+*tfstate*
+*.terraform*
+*.idea*
+*.pyc
