@@ -5,3 +5,9 @@ variable "scheduler-name" {}
 variable "worker-name" {}
 
 variable "environment" {}
+
+variable "aws_access_key" {}
+
+variable "aws_secret_key" {}
+
+variable "conda_env" {}

@@ -2,7 +2,8 @@ module "dask-scheduler" {
   source = "../modules/dask-scheduler"
   scheduler_name = "${var.scheduler-name}"
   environment = "${var.environment}"
-  conda_env = "${file("env.yaml.b64")}"
+  conda_env = "${var.conda_env}"
+  #conda_env = "${file("env.yaml.b64")}"
 }
 
 module "dask-worker" {
@@ -10,7 +11,8 @@ module "dask-worker" {
   scheduler_address = "${module.dask-scheduler.private_ip}"
   worker_name = "${var.worker-name}"
   environment = "personal"
-  conda_env = "${file("env.yaml.b64")}"
+  conda_env = "${var.conda_env}"
+  #conda_env = "${file("env.yaml.b64")}"
 }
 
 
