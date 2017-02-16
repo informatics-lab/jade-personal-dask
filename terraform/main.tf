@@ -3,7 +3,6 @@ module "dask-scheduler" {
   scheduler_name = "${var.scheduler-name}"
   environment = "${var.environment}"
   conda_env = "${var.conda_env}"
-  #conda_env = "${file("env.yaml.b64")}"
 }
 
 module "dask-worker" {
@@ -13,12 +12,11 @@ module "dask-worker" {
   environment = "personal"
   conda_env = "${var.conda_env}"
   num_workers = "${var.num_workers}"
-  #conda_env = "${file("env.yaml.b64")}"
 }
 
 
 output dask-scheduler-endpoint {
-  value = "http://${module.dask-scheduler.private_ip}:8786"
+  value = "${module.dask-scheduler.private_ip}:8786"
 }
 
 output stats-endpoint {
