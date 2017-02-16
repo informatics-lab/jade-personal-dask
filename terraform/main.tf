@@ -12,6 +12,7 @@ module "dask-worker" {
   worker_name = "${var.worker-name}"
   environment = "personal"
   conda_env = "${var.conda_env}"
+  num_workers = "${var.num_workers}"
   #conda_env = "${file("env.yaml.b64")}"
 }
 

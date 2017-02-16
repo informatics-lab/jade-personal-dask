@@ -11,3 +11,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "conda_env" {}
+
+variable "num_workers" {
+  default = 1
+}

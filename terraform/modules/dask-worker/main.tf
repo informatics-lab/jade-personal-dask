@@ -21,9 +21,9 @@ resource "aws_launch_configuration" "dask-workers" {
 resource "aws_autoscaling_group" "dask-worker" {
   availability_zones    = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
   name                  = "${var.worker_name}s"
-  max_size              = 1
-  min_size              = 1
-  desired_capacity      = 1
+  max_size              = "${var.num_workers}"
+  min_size              = "${var.num_workers}"
+  desired_capacity      = "${var.num_workers}"
   health_check_grace_period = 300
   health_check_type     = "EC2"
   force_delete          = true

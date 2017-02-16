@@ -32,7 +32,7 @@ resource "aws_security_group_rule" "dashboard_incoming" {
 resource "aws_instance" "dask-scheduler" {
   # Amazon Linux ami
   ami           = "ami-f9dd458a"
-  instance_type = "m3.large"
+  instance_type = "t2.small"
 
   key_name             = "gateway"
   user_data            = "${module.dask-bootstrap.rendered}"
